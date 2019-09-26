@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <h2>{{msg}}</h2>
+    <h2>{{1+1}}</h2>
+    <h2>{{result}}</h2>
+  </div>
+
+
+  <!-- 1、在body内引入vue.js-->
+  <script type="text/javascript" src="./node_modules/vue/dist/vue.min.js"></script>
+
+  <!-- 2、创建实例化对象-->
+  <script>
+    var data2={
+      msg:'黄瓜',
+      result: 1==1
+    }
+    var vm = new Vue({
+        el: '#app',   //目的地
+        data: data2,  //data既可以是对象也可以是方法
+        template:`<div id="app">测试：{{msg}}</div>`    //如果template定义了内容（空串也属于内容），相对于目的地优先显示
+    });
+
+    //去实例化对象的属性，通过，对象.$属性的方式取值，vue值比较时用的是三个等号
+    console.log(vm.$data ===data2);
+    console.log(vm.$el ===document.getElementById("app"));
+
+  </script>
+</body>
+</html>

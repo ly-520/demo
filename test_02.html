@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+
+<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: "#app",
+    data: function () {
+      return {
+        msg:"指令系统",
+        msg2:"<h2>指令系统</h2>",
+        isshow: false
+      }
+    },     <!--指令标签 v-text,v-html,v-if,v-show 控制dom 元素的显示隐藏 -->
+    template: `
+        <div>
+            <h2>{{msg}}</h2>
+            <p v-text="msg"></p>
+            <div v-html="msg2"></div>
+            <div v-if="isshow">开始表演</div>
+        </div>
+    `
+  })
+  
+</script>
+
+</body>
+</html>
